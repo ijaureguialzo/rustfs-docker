@@ -1,0 +1,12 @@
+services:
+  rustfs:
+    image: quay.io/rustfs/rustfs:${RUSTFS_VERSION:-latest}
+    env_file: .env
+    volumes:
+      - rustfs_data:/data
+    ports:
+      - "7000:7000"
+      - "7001:7001"
+
+volumes:
+  rustfs_data:
